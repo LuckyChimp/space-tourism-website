@@ -1,18 +1,20 @@
 <script lang="ts">
     let {
         href,
-        prefix = '',
+        prefix,
         active = false,
+        width = $bindable(),
         children,
     }: {
         href: string;
-        prefix: string;
-        active: boolean;
-        children: any;
+        prefix?: string;
+        active?: boolean;
+        width?: number;
+        children?: any;
     } = $props();
 </script>
 
-<div class="navbar-item" class:active>
+<div class="navbar-item" class:active bind:clientWidth={width}>
     <a {href}>
         <span class="number">{prefix}</span>
         <span class="text">{@render children()}</span>
@@ -23,15 +25,6 @@
     .navbar-item {
         height: 96px;
         padding: 40px 0;
-    }
-
-    .navbar-item.active {
-        border-bottom: 3px solid var(--white);
-        transition: border-bottom-color ease-out 200ms;
-    }
-
-    .navbar-item.active:has(a:hover) {
-        border-bottom-color: rgba(var(--white-rgb), 0.6);
     }
 
     a {
