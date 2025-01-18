@@ -1,0 +1,24 @@
+/* Variables */
+:root {
+    --white: #ffffff;
+    --light-blue: #d0d6f9;
+    --dark-blue: #0b0d17
+}
+
+
+/* Overrides */
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-size: 16px;
+}
+
+h1 {
+    font-size: 144px;
+    text-transform: uppercase;
+    color: var(--white);
+}
