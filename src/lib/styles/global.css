@@ -1,8 +1,12 @@
 /* Variables */
 :root {
     --white: #ffffff;
+    --white-rgb: 255, 255, 255;
     --light-blue: #d0d6f9;
-    --dark-blue: #0b0d17
+    --dark-blue: #0b0d17;
+    --font-family-bellefair: 'Bellefair', serif;
+    --font-family-barlow: 'Barlow', sans-serif;
+    --font-family-barlow-condensed: 'Barlow Condensed', sans-serif;
 }
 
 
@@ -14,11 +18,67 @@
 }
 
 body {
-    font-size: 16px;
+    font-family: var(--font-family-bellefair);
+    font-size: 18px;
+    color: var(--white);
+}
+
+button {
+    font-family: inherit;
+    border: none;
+    transition: transform ease-out 100ms;
+}
+
+button:hover {
+    transform: scale(105%);
+}
+
+/*>>>> Headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: normal;
+    text-transform: uppercase;
 }
 
 h1 {
     font-size: 144px;
+}
+
+h2 {
+    font-size: 100px;
+}
+
+h3 {
+    font-size: 56px;
+}
+
+h4 {
+    font-size: 32px;
+}
+
+h5 {
+    font-family: var(--font-family-barlow-condensed);
+    font-size: 28px;
+    letter-spacing: 4px;
+}
+
+h6 {
+    font-size: 28px;
+}
+
+/*>>>> Text  */
+p {
+    font-family: var(--font-family-barlow);
+    line-height: 180%;
+}
+
+small {
+    font-family: var(--font-family-barlow-condensed);
+    font-size: 14px;
+    letter-spacing: 2px;
     text-transform: uppercase;
-    color: var(--white);
 }
