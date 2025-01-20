@@ -2,22 +2,28 @@
     import { goto } from '$app/navigation';
 </script>
 
-<div class="home-section">
+<div id="home">
     <div class="hero-section">
         <div class="hero-text">
             <h5>So, you want to travel to</h5>
             <h1>Space</h1>
-            <p>Let's face it; if you want to go to space, you might as well genuinely go to outer space and not hover kind of on the edge of it. Well sit back, and relax because we'll give you a truly out of this world experience!</p>
+            <p>
+                Let's face it; if you want to go to space, you might as well genuinely go to outer space and not hover kind of on the edge of it. Well sit back,
+                and relax because we'll give you a truly out of this world experience!
+            </p>
         </div>
         <button onclick={() => goto('#destination')} class="hero-button"><h4>Explore</h4></button>
     </div>
 </div>
 
 <style>
-    .home-section {
+    #home {
         height: 100vh;
         display: flex;
         flex-direction: column-reverse;
+        background-image: url('images/home/background-home-desktop.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
     }
 
     .hero-section {

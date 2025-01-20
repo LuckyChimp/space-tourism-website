@@ -1,5 +1,4 @@
 <script lang="ts">
-	import Header from '$lib/components/Header.svelte';
 	import '@fontsource/barlow';
 	import '@fontsource/barlow-condensed';
 	import '@fontsource/bellefair';
@@ -9,5 +8,4 @@
 	let { children } = $props();
 </script>
 
-<Header />
 {@render children()}
