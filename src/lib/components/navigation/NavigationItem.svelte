@@ -1,40 +1,42 @@
 <script lang="ts">
     let {
-        href,
+        index,
         prefix,
-        active = false,
+        active,
+        onClick,
         width = $bindable(),
         children,
     }: {
-        href: string;
-        prefix?: string;
-        active?: boolean;
+        index: number;
+        prefix: string | null;
+        active: boolean;
+        onClick: (index: number) => void;
         width?: number;
         children?: any;
     } = $props();
 </script>
 
 <div class="navbar-item" class:active bind:clientWidth={width}>
-    <a {href}>
-        <span class="number">{prefix}</span>
+    <button onclick={() => onClick(index)}>
+        {#if prefix}<span class="number">{prefix}</span>{/if}
         <span class="text">{@render children()}</span>
-    </a>
+    </button>
 </div>
 
 <style>
-    .navbar-item {
-        height: 96px;
-        padding: 40px 0;
-    }
-
-    a {
-        color: var(--white);
-        text-decoration: none;
+    button {
+        color: var(--colorOfInactiveItems, var(--white));
+        background-color: transparent;
+        cursor: pointer;
         transition: color ease-out 200ms;
     }
 
-    a:hover {
+    button:hover {
         color: rgba(var(--white-rgb), 0.6);
+    }
+
+    .navbar-item.active > button {
+        color: var(--white);
     }
 
     span {

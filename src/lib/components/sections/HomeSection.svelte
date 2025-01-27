@@ -46,5 +46,10 @@
         height: 272px;
         border-radius: 50%;
         cursor: pointer;
+        transition: transform ease-out 100ms;
+    }
+
+    .hero-section .hero-button:hover {
+        transform: scale(105%);
     }
 </style>

@@ -7,8 +7,14 @@
 	let { data }: { data: PageServerData } = $props();
 </script>
 
+<svelte:head>
+	<title>Space tourism</title>
+</svelte:head>
+
 <Header />
 <main>
 	<HomeSection />
-	<DestinationSection />
+	<DestinationSection data={data.destinations} />
 </main>
+
+<!-- TODO Implement scroll snap with snap points for each section -->

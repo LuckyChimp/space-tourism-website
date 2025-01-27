@@ -26,11 +26,6 @@ body {
 button {
     font-family: inherit;
     border: none;
-    transition: transform ease-out 100ms;
-}
-
-button:hover {
-    transform: scale(105%);
 }
 
 /*>>>> Headings */

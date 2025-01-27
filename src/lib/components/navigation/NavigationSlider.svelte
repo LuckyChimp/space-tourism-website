@@ -1,5 +1,5 @@
 <script lang="ts">
-    let { activeItemIndex, itemWidths }: { activeItemIndex: number; itemWidths: number[] } = $props();
+    let { activeIndex, itemWidths }: { activeIndex: number; itemWidths: number[] } = $props();
 
     let slider: HTMLDivElement;
 
@@ -9,10 +9,10 @@
 
     // Move slider according to the current section
     const updateSlider = () => {
-        if (activeItemIndex === -1) return;
+        if (activeIndex === -1) return;
 
-        slider.style.width = `${itemWidths[activeItemIndex]}px`;
-        slider.style.transform = `translateX(${calcXOffsetOfSlider(activeItemIndex)}px)`;
+        slider.style.width = `${itemWidths[activeIndex]}px`;
+        slider.style.transform = `translateX(${calcXOffsetOfSlider(activeIndex)}px)`;
     };
 
     // Calculate the x offset of the slider
