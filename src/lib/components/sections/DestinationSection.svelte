@@ -22,7 +22,7 @@
         usePrefixes={false}
         displayBackground={false}
         onItemClick={onTabBarItemClick}
-        --height="36px"
+        --height="var(--400)"
         --padding="0"
         --colorOfInactiveItems="var(--light-blue)"
     />

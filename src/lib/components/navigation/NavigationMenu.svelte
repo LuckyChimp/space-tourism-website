@@ -36,19 +36,19 @@
 
 <style>
     nav {
-        height: var(--height, 96px);
+        height: var(--height, var(--1200));
         position: relative;
         display: flex;
         align-items: center;
         flex-direction: row;
-        gap: 48px;
-        padding: var(--padding, 0 64px 0 256px);
+        gap: var(--600);
+        padding: var(--padding, 0 var(--800) 0 var(--3200));
     }
 
     nav.display-background {
         background: rgba(var(--white-rgb), 0.05);
-        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-        backdrop-filter: blur(40px);
-        -webkit-backdrop-filter: blur(40px);
+        box-shadow: 0 var(--50) var(--400) rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(var(--500));
+        -webkit-backdrop-filter: blur(var(--500));
     }
 </style>

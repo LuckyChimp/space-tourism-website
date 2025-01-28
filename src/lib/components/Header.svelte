@@ -29,8 +29,8 @@
         usePrefixes
         displayBackground
         onItemClick={onNavbarItemClick}
-        --height="96px"
-        --padding="0 64px 0 256px"
+        --height="var(--1200)"
+        --padding="0 var(--800) 0 var(--3200)"
         --colorOfInactiveItems="var(--white)"
     />
 </header>
@@ -38,8 +38,8 @@
 <style>
     header {
         position: fixed;
-        top: 40px;
-        left: 64px;
+        top: var(--500);
+        left: var(--800);
         right: 0;
         display: flex;
         flex-direction: row;
@@ -51,7 +51,7 @@
     hr {
         width: 50%;
         position: absolute;
-        left: calc(48px + 64px);
+        left: calc(var(--600) + var(--800));
         height: 1px;
         border-color: rgba(var(--white-rgb), 0.25);
         z-index: 1;

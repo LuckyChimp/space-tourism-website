@@ -31,14 +31,14 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 0 calc(64px + 48px + 64px) 128px calc(64px + 48px + 64px);
+        padding: 0 calc(var(--800) + var(--600) + var(--800)) var(--1600) calc(var(--800) + var(--600) + var(--800));
     }
 
     .hero-section .hero-text {
         width: 540px;
         display: flex;
         flex-direction: column;
-        gap: 24px;
+        gap: var(--300);
     }
 
     .hero-section .hero-button {

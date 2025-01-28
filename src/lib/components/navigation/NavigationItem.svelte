@@ -41,13 +41,13 @@
 
     span {
         font-family: var(--font-family-barlow-condensed);
-        font-size: 16px;
-        letter-spacing: 2px;
+        font-size: var(--200);
+        letter-spacing: var(--25);
         text-transform: uppercase;
     }
 
     .number {
         font-weight: bold;
-        margin-right: 12px;
+        margin-right: var(--150);
     }
 </style>
