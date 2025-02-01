@@ -36,6 +36,16 @@
     margin: 0;
 }
 
+
+/* Define scroll snapping */
+html {
+    scroll-snap-type: y mandatory;
+}
+
+section {
+    scroll-snap-align: start;
+}
+
 body {
     font-family: var(--font-family-bellefair);
     font-size: 18px;

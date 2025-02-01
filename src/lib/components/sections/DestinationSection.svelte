@@ -15,7 +15,7 @@
     const onTabBarItemClick = (index: number) => (activeTabBarItemIndex = index);
 </script>
 
-<div id="destination">
+<section id="destination">
     <TabBar
         sections={tabBarSections}
         activeIndex={activeTabBarItemIndex}
@@ -26,7 +26,7 @@
         --padding="0"
         --colorOfInactiveItems="var(--light-blue)"
     />
-</div>
+</section>
 
 <style>
     #destination {

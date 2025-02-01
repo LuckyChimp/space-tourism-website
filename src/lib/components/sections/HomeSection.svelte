@@ -2,7 +2,7 @@
     import { goto } from '$app/navigation';
 </script>
 
-<div id="home">
+<section id="home">
     <div class="hero-section">
         <div class="hero-text">
             <h5>So, you want to travel to</h5>
@@ -14,7 +14,7 @@
         </div>
         <button onclick={() => goto('#destination')} class="hero-button"><h4>Explore</h4></button>
     </div>
-</div>
+</section>
 
 <style>
     #home {

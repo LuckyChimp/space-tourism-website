@@ -16,5 +16,3 @@
 	<HomeSection />
 	<DestinationSection data={data.destinations} />
 </main>
-
-<!-- TODO Implement scroll snap with snap points for each section -->
