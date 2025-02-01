@@ -4,12 +4,12 @@
     import Logo from '$lib/components/Logo.svelte';
     import Navbar from '$lib/components/navigation/NavigationMenu.svelte';
 
+    // Props
+    let { activeNavbarItemIndex }: { activeNavbarItemIndex: number } = $props();
+
     // Local variables
     const navbarSections = ['Home', 'Destination', 'Crew', 'Technology'];
     const validHashes = navbarSections.map((section) => `#${section.toLowerCase()}`);
-
-    // States
-    let activeNavbarItemIndex = $state(0);
 
     $effect(() => {
         activeNavbarItemIndex = validHashes.indexOf(page.url.hash);
@@ -22,7 +22,6 @@
 <header>
     <Logo />
     <hr />
-    <!-- FIXME Active navbar item doesnt change when scrolling through the website -->
     <Navbar
         sections={navbarSections}
         activeIndex={activeNavbarItemIndex}
