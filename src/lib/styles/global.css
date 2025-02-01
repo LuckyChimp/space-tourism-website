@@ -57,6 +57,11 @@ button {
     border: none;
 }
 
+hr {
+    height: 1px;
+    border-color: rgba(var(--white-rgb), 0.25);
+}
+
 /*>>>> Headings */
 h1,
 h2,

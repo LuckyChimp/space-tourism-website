@@ -1,5 +1,5 @@
 <script lang="ts">
-    let { activeIndex, itemWidths }: { activeIndex: number; itemWidths: number[] } = $props();
+    let { activeIndex, itemWidths, itemGap }: { activeIndex: number; itemWidths: number[]; itemGap: number } = $props();
 
     // Local variables
     let slider: HTMLDivElement;
@@ -18,7 +18,7 @@
 
     // Calculate the x offset of the slider
     const calcXOffsetOfSlider = (index: number) => {
-        const gap = 48; // Gap between nav items
+        const gap = itemGap; // Gap between nav items
         return itemWidths.slice(0, index).reduce((offset, width) => offset + width, index * gap);
     };
 </script>

@@ -28,6 +28,8 @@
         usePrefixes
         displayBackground
         onItemClick={onNavbarItemClick}
+        itemGap={48}
+        --itemGap="var(--600)"
         --height="var(--1200)"
         --padding="0 var(--800) 0 var(--3200)"
         --colorOfInactiveItems="var(--white)"
@@ -51,8 +53,6 @@
         width: 50%;
         position: absolute;
         left: calc(var(--600) + var(--800));
-        height: 1px;
-        border-color: rgba(var(--white-rgb), 0.25);
         z-index: 1;
     }
 </style>

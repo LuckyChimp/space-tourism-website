@@ -9,12 +9,14 @@
         onItemClick,
         usePrefixes,
         displayBackground,
+        itemGap,
     }: {
         sections: string[];
         activeIndex: number;
         onItemClick: (index: number) => void;
         usePrefixes: boolean;
         displayBackground: boolean;
+        itemGap: number;
     } = $props();
 
     // States
@@ -33,7 +35,7 @@
             {section}
         </NavigationItem>
     {/each}
-    <NavigationSlider {activeIndex} {itemWidths} />
+    <NavigationSlider {activeIndex} {itemWidths} {itemGap} />
 </nav>
 
 <style>
@@ -43,7 +45,7 @@
         display: flex;
         align-items: center;
         flex-direction: row;
-        gap: var(--600);
+        gap: var(--itemGap, var(--600));
         padding: var(--padding, 0 var(--800) 0 var(--3200));
     }
 

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Header from '$lib/components/Header.svelte';
+	import MainHeader from '$lib/components/headers/MainHeader.svelte';
 	import DestinationSection from '$lib/components/sections/DestinationSection.svelte';
 	import HomeSection from '$lib/components/sections/HomeSection.svelte';
 	import type { PageServerData } from './$types';
@@ -29,7 +29,7 @@
 	<title>Space tourism</title>
 </svelte:head>
 
-<Header {activeNavbarItemIndex} />
+<MainHeader {activeNavbarItemIndex} />
 <main>
 	<HomeSection />
 	<DestinationSection data={data.destinations} />
