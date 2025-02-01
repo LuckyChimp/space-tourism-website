@@ -1,6 +1,7 @@
 <script lang="ts">
     let { activeIndex, itemWidths }: { activeIndex: number; itemWidths: number[] } = $props();
 
+    // Local variables
     let slider: HTMLDivElement;
 
     $effect(() => {

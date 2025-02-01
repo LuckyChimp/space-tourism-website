@@ -5,6 +5,7 @@
 	// global.css with variables etc. is inherited by all pages of this website
 	import '$lib/styles/global.css';
 
+	// Props
 	let { children } = $props();
 </script>
 

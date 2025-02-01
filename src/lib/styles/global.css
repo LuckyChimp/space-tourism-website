@@ -88,6 +88,7 @@ h5 {
     font-family: var(--font-family-barlow-condensed);
     font-size: 28px;
     letter-spacing: 4px;
+    color: var(--light-blue);
 }
 
 h6 {

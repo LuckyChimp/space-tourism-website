@@ -41,6 +41,10 @@
         gap: var(--300);
     }
 
+    .hero-section .hero-text p {
+        color: var(--light-blue);
+    }
+
     .hero-section .hero-button {
         width: 272px;
         height: 272px;

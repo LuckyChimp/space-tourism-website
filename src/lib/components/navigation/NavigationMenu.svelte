@@ -2,6 +2,7 @@
     import NavigationItem from '$lib/components/navigation/NavigationItem.svelte';
     import NavigationSlider from '$lib/components/navigation/NavigationSlider.svelte';
 
+    // Props
     let {
         sections,
         activeIndex,
@@ -16,6 +17,7 @@
         displayBackground: boolean;
     } = $props();
 
+    // States
     let itemWidths = $state(Array(sections.length).fill(0));
 </script>
 
