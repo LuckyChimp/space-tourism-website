@@ -43,6 +43,7 @@
 
 /* Define scroll snapping */
 html {
+    scroll-behavior: smooth;
     scroll-snap-type: y mandatory;
 }
 

@@ -27,6 +27,7 @@
         flex-direction: column;
         position: relative;
         overflow-x: hidden;
+        mask: linear-gradient(to left, transparent 0%, var(--white) 15% 85%, transparent 100%);
     }
 
     .carousel .carousel-slides {
