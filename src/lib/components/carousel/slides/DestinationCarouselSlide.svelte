@@ -1,27 +1,40 @@
 <script lang="ts">
-    let { name, description, distance, travelTime, active }: { name: string; description: string; distance: string; travelTime: string; active: boolean } =
+    let { name, description, distance, travelTime, image }: { name: string; description: string; distance: string; travelTime: string; image: string } =
         $props();
 </script>
 
-<div class="destination-carousel-slide" class:active>
-    <h2 class="destination-name">{name}</h2>
-    <p class="destination-description">{description}</p>
-    <hr />
-    <div class="distance-travel-time-container">
-        <div class="distance-container">
-            <small>Avg. distance</small>
-            <h6>{distance}</h6>
-        </div>
-        <div class="travel-time-container">
-            <small>Est. travel time</small>
-            <h6>{travelTime}</h6>
+<div class="two-columns">
+    <div class="left-column">
+        <img src={image} alt="moon" />
+    </div>
+    <div class="right-column">
+        <h2 class="destination-name">{name}</h2>
+        <p class="destination-description">{description}</p>
+        <hr />
+        <div class="distance-travel-time-container">
+            <div class="distance-container">
+                <small>Avg. distance</small>
+                <h6>{distance}</h6>
+            </div>
+            <div class="travel-time-container">
+                <small>Est. travel time</small>
+                <h6>{travelTime}</h6>
+            </div>
         </div>
     </div>
 </div>
 
 <style>
-    .destination-carousel-slide {
+    .two-columns {
         min-width: 100%;
+        display: flex;
+        align-items: center;
+        padding: var(--section-padding-left-right);
+    }
+
+    .left-column,
+    .right-column {
+        flex: 1;
     }
 
     .destination-name {

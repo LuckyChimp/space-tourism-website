@@ -12,6 +12,8 @@
         display: flex;
         align-items: center;
         gap: var(--300);
+        margin-bottom: var(--300);
+        padding: var(--section-padding-left-right);
     }
 
     .section-header .section-number {

@@ -26,6 +26,10 @@
     --1200: 96px;
     --1600: 128px;
     --3200: 256px;
+
+    /* Paddings */
+    --section-padding-top-bottom: calc(var(--500) + var(--1200) + var(--600)) 0 var(--600);
+    --section-padding-left-right: 0 calc(var(--800) + var(--600) + var(--800));
 }
 
 

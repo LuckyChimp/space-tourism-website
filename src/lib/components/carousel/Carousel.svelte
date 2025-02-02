@@ -22,10 +22,15 @@
 
 <style>
     .carousel {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        position: relative;
         overflow-x: hidden;
     }
 
     .carousel .carousel-slides {
+        height: 100%;
         display: flex;
         gap: 600px; /* WATCH OUT has to match the above factor of activeIndex for calculaton of the offset */
         overflow-x: hidden;

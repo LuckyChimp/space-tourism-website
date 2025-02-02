@@ -1,5 +1,6 @@
 <script lang="ts">
 	import MainHeader from '$lib/components/headers/MainHeader.svelte';
+	import CrewSection from '$lib/components/sections/CrewSection.svelte';
 	import DestinationSection from '$lib/components/sections/DestinationSection.svelte';
 	import HomeSection from '$lib/components/sections/HomeSection.svelte';
 	import type { PageServerData } from './$types';
@@ -32,7 +33,8 @@
 <MainHeader {activeNavbarItemIndex} />
 <main>
 	<HomeSection />
-	<DestinationSection data={data.destinations} />
+	<DestinationSection destinations={data.destinations} />
+	<CrewSection crew={data.crew} />
 </main>
 
 <svelte:window onscroll={handleOnWindowScroll} />

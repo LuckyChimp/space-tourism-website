@@ -6,43 +6,27 @@
     import type { PageServerData } from '../../../routes/$types';
 
     // Props
-    let { data }: { data: PageServerData['destinations'] } = $props();
+    let { destinations }: { destinations: PageServerData['destinations'] } = $props();
 
     // Local variables
-    const tabBarSections = data.map((destination) => destination.name);
-    const planetImageURLs = [
-        '/images/destination/image-moon.png',
-        '/images/destination/image-mars.png',
-        '/images/destination/image-europa.png',
-        '/images/destination/image-titan.png',
-    ];
+    const tabBarSections = destinations.map((destination) => destination.name);
 
     // States
     let activeDestinationIndex = $state(0);
-    let planetImageFades = $state(false);
-    let planetImageURL = $state(planetImageURLs[0]);
 
     // Event listeners
     const onTabBarItemClick = (index: number) => {
         if (index !== activeDestinationIndex) {
             activeDestinationIndex = index;
-
-            // Set new planet image
-            planetImageFades = true;
-            setTimeout(() => {
-                planetImageURL = planetImageURLs[index];
-                planetImageFades = false;
-            }, 300);
         }
     };
 </script>
 
 <section id="destination">
     <SectionHeader sectionNumber="01" heading="Pick your destination" />
-    <div class="destination-content-container">
-        <img src={planetImageURL} alt="moon" class:fade={planetImageFades} />
-        <Carousel activeIndex={activeDestinationIndex}>
-            {#snippet navigation()}
+    <Carousel activeIndex={activeDestinationIndex}>
+        {#snippet navigation()}
+            <div class="tab-bar-container">
                 <TabBar
                     sections={tabBarSections}
                     activeIndex={activeDestinationIndex}
@@ -55,20 +39,20 @@
                     --padding="0"
                     --colorOfInactiveItems="var(--light-blue)"
                 />
-            {/snippet}
-            {#snippet slides()}
-                {#each data as destination, index}
-                    <DestinationCarouselSlide
-                        name={destination.name}
-                        description={destination.description}
-                        distance={destination.distance}
-                        travelTime={destination.travel}
-                        active={activeDestinationIndex === index}
-                    />
-                {/each}
-            {/snippet}
-        </Carousel>
-    </div>
+            </div>
+        {/snippet}
+        {#snippet slides()}
+            {#each destinations as destination}
+                <DestinationCarouselSlide
+                    name={destination.name}
+                    description={destination.description}
+                    distance={destination.distance}
+                    travelTime={destination.travel}
+                    image={destination.images.png}
+                />
+            {/each}
+        {/snippet}
+    </Carousel>
 </section>
 
 <style>
@@ -76,26 +60,15 @@
         height: 100vh;
         display: flex;
         flex-flow: column nowrap;
-        padding: calc(var(--500) + var(--1200) + var(--600)) calc(var(--800) + var(--600) + var(--800)) var(--600) calc(var(--800) + var(--600) + var(--800));
+        padding: var(--section-padding-top-bottom);
         background-image: url('images/destination/background-destination-desktop.jpg');
         background-size: cover;
         background-repeat: no-repeat;
     }
 
-    .destination-content-container {
-        height: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: var(--1000);
-    }
-
-    .destination-content-container > img {
-        opacity: 1;
-        transition: opacity 300ms ease-in-out; /* WATCH OUT duration has to match the above timeout while fading in onTabBarItemClick() */
-    }
-
-    .destination-content-container > img.fade {
-        opacity: 0;
+    .tab-bar-container {
+        position: absolute;
+        top: var(--800);
+        left: 50%;
     }
 </style>
