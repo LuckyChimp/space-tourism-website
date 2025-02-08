@@ -21,7 +21,7 @@
 
 <section id="crew">
     <SectionHeader sectionNumber="02" heading="Meet your crew" />
-    <Carousel activeIndex={activeCrewIndex}>
+    <Carousel orientation="landscape" activeIndex={activeCrewIndex}>
         {#snippet slides()}
             {#each crew as crewMember}
                 <CrewMemberCarouselSlide role={crewMember.role} name={crewMember.name} bio={crewMember.bio} image={crewMember.images.png} />
@@ -29,7 +29,7 @@
         {/snippet}
         {#snippet navigation()}
             <div class="pagination-container">
-                <Pagination activeIndex={activeCrewIndex} length={crew.length} onItemClick={onPaginationItemClick} --padding-bottom="var(--600)" />
+                <Pagination type="small" activeIndex={activeCrewIndex} length={crew.length} onItemClick={onPaginationItemClick} --padding-bottom="var(--600)" />
             </div>
         {/snippet}
     </Carousel>
@@ -40,7 +40,8 @@
         height: 100vh;
         display: flex;
         flex-direction: column;
-        padding: var(--section-padding-top-bottom);
+        padding-top: var(--section-padding-top);
+        padding-bottom: var(--section-padding-bottom);
         background-image: url('images/crew/background-crew-desktop.jpg');
         background-position: 0 50%;
         background-size: cover;
@@ -51,6 +52,7 @@
         position: absolute;
         bottom: 0;
         left: 0;
-        padding: var(--section-padding-left-right);
+        padding-left: var(--section-padding-left);
+        padding-right: var(--section-padding-right);
     }
 </style>

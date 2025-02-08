@@ -24,7 +24,7 @@
 
 <section id="destination">
     <SectionHeader sectionNumber="01" heading="Pick your destination" />
-    <Carousel activeIndex={activeDestinationIndex}>
+    <Carousel orientation="landscape" activeIndex={activeDestinationIndex}>
         {#snippet navigation()}
             <div class="tab-bar-container">
                 <TabBar
@@ -60,7 +60,8 @@
         height: 100vh;
         display: flex;
         flex-flow: column nowrap;
-        padding: var(--section-padding-top-bottom);
+        padding-top: var(--section-padding-top);
+        padding-bottom: var(--section-padding-bottom);
         background-image: url('images/destination/background-destination-desktop.jpg');
         background-size: cover;
         background-repeat: no-repeat;

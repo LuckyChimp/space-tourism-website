@@ -28,8 +28,10 @@
     --3200: 256px;
 
     /* Paddings */
-    --section-padding-top-bottom: calc(var(--500) + var(--1200) + var(--600)) 0 var(--600);
-    --section-padding-left-right: 0 calc(var(--800) + var(--600) + var(--800));
+    --section-padding-top: calc(var(--500) + var(--1200) + var(--600));
+    --section-padding-bottom: var(--600);
+    --section-padding-left: calc(var(--800) + var(--600) + var(--800));
+    --section-padding-right: var(--section-padding-left);
 }
 
 
@@ -58,8 +60,9 @@ body {
 }
 
 button {
-    font-family: inherit;
     border: none;
+    color: var(--white);
+    font-family: inherit;
 }
 
 hr {

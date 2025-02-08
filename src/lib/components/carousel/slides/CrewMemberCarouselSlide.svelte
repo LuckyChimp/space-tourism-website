@@ -21,7 +21,8 @@
         display: flex;
         justify-content: space-between;
         gap: var(--400);
-        padding: var(--section-padding-left-right);
+        padding-left: var(--section-padding-left);
+        padding-right: var(--section-padding-right);
     }
 
     .left-column {

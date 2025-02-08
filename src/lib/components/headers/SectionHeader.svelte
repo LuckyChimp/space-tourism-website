@@ -13,7 +13,8 @@
         align-items: center;
         gap: var(--300);
         margin-bottom: var(--300);
-        padding: var(--section-padding-left-right);
+        padding-left: var(--padding-left, var(--section-padding-left));
+        padding-right: var(--section-padding-right);
     }
 
     .section-header .section-number {

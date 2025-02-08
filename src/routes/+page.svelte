@@ -3,6 +3,7 @@
 	import CrewSection from '$lib/components/sections/CrewSection.svelte';
 	import DestinationSection from '$lib/components/sections/DestinationSection.svelte';
 	import HomeSection from '$lib/components/sections/HomeSection.svelte';
+	import TechnologySection from '$lib/components/sections/TechnologySection.svelte';
 	import type { PageServerData } from './$types';
 
 	// Props
@@ -29,12 +30,12 @@
 <svelte:head>
 	<title>Space tourism</title>
 </svelte:head>
+<svelte:window onscroll={handleOnWindowScroll} />
 
 <MainHeader {activeNavbarItemIndex} />
 <main>
 	<HomeSection />
 	<DestinationSection destinations={data.destinations} />
 	<CrewSection crew={data.crew} />
+	<TechnologySection technology={data.technology} />
 </main>
-
-<svelte:window onscroll={handleOnWindowScroll} />

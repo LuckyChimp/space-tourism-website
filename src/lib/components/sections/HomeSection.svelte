@@ -49,6 +49,7 @@
         width: 272px;
         height: 272px;
         border-radius: 50%;
+        color: var(--dark-blue);
         cursor: pointer;
         transition: transform ease-out 100ms;
     }

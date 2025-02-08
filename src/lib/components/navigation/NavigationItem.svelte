@@ -1,4 +1,6 @@
 <script lang="ts">
+    import type { Snippet } from 'svelte';
+
     // Props
     let {
         index,
@@ -13,7 +15,7 @@
         active: boolean;
         onClick: (index: number) => void;
         width?: number;
-        children?: any;
+        children: Snippet;
     } = $props();
 </script>
 
@@ -26,14 +28,14 @@
 
 <style>
     button {
-        color: var(--colorOfInactiveItems, var(--white));
+        color: var(--colorOfInactiveItems);
         background-color: transparent;
         cursor: pointer;
-        transition: color ease-out 200ms;
+        transition: opacity ease-out 200ms;
     }
 
     button:hover {
-        color: rgba(var(--white-rgb), 0.6);
+        opacity: 0.6;
     }
 
     .navbar-item.active > button {

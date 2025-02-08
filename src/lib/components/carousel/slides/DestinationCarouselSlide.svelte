@@ -29,7 +29,8 @@
         min-width: 100%;
         display: flex;
         align-items: center;
-        padding: var(--section-padding-left-right);
+        padding-left: var(--section-padding-left);
+        padding-right: var(--section-padding-right);
     }
 
     .left-column,
