@@ -1,19 +1,10 @@
 <script lang="ts">
     import { goto } from '$app/navigation';
-    import { page } from '$app/state';
     import Logo from '$lib/components/Logo.svelte';
     import Navbar from '$lib/components/navigation/NavigationMenu.svelte';
 
     // Props
-    let { activeNavbarItemIndex }: { activeNavbarItemIndex: number } = $props();
-
-    // Local variables
-    const navbarSections = ['Home', 'Destination', 'Crew', 'Technology'];
-    const validHashes = navbarSections.map((section) => `#${section.toLowerCase()}`);
-
-    $effect(() => {
-        activeNavbarItemIndex = validHashes.indexOf(page.url.hash);
-    });
+    let { activeNavbarItemIndex, navbarSections }: { activeNavbarItemIndex: number; navbarSections: string[] } = $props();
 
     // Event listeners
     const onNavbarItemClick = (index: number) => goto(`#${navbarSections[index].toLowerCase()}`);

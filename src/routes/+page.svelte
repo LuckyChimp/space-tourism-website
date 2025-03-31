@@ -6,6 +6,9 @@
 	import TechnologySection from '$lib/components/sections/TechnologySection.svelte';
 	import type { PageServerData } from './$types';
 
+	// Local variables
+	const navbarSections = ['Home', 'Destination', 'Crew', 'Technology'];
+
 	// Props
 	let { data }: { data: PageServerData } = $props();
 
@@ -32,7 +35,7 @@
 </svelte:head>
 <svelte:window onscroll={handleOnWindowScroll} />
 
-<MainHeader {activeNavbarItemIndex} />
+<MainHeader {activeNavbarItemIndex} {navbarSections} />
 <main>
 	<HomeSection />
 	<DestinationSection destinations={data.destinations} />
