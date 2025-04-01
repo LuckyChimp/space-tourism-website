@@ -31,7 +31,7 @@
         color: var(--colorOfInactiveItems);
         background-color: transparent;
         cursor: pointer;
-        transition: opacity ease-out 200ms;
+        transition: opacity 200ms ease-out;
     }
 
     button:hover {

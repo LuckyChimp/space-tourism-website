@@ -51,7 +51,7 @@
         border-radius: 50%;
         color: var(--dark-blue);
         cursor: pointer;
-        transition: transform ease-out 100ms;
+        transition: transform 100ms ease-out;
     }
 
     .hero-section .hero-button:hover {

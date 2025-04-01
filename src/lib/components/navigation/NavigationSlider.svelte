@@ -35,6 +35,6 @@
         position: absolute;
         bottom: 0;
         background-color: var(--white);
-        transition: all ease-out 300ms;
+        transition: all 300ms ease-out;
     }
 </style>

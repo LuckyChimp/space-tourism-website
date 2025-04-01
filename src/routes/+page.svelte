@@ -17,7 +17,7 @@
 
 	// Event listeners
 	// Change active navbar item when scrolling through the website
-	const handleOnWindowScroll = () => {
+	const onWindowScroll = () => {
 		const sections = document.querySelectorAll('main > section') as NodeListOf<HTMLElement>;
 		sections.forEach((section, index) => {
 			const sectionTop = section.offsetTop;
@@ -33,7 +33,7 @@
 <svelte:head>
 	<title>Space tourism</title>
 </svelte:head>
-<svelte:window onscroll={handleOnWindowScroll} />
+<svelte:window onscroll={onWindowScroll} />
 
 <MainHeader {activeNavbarItemIndex} {navbarSections} />
 <main>
