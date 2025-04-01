@@ -7,19 +7,19 @@
         prefix,
         active,
         onClick,
-        width = $bindable(),
+        dimensions = $bindable({ width: 0, height: 0 }),
         children,
     }: {
         index: number;
         prefix: string | null;
         active: boolean;
         onClick: (index: number) => void;
-        width?: number;
+        dimensions?: { width: number; height: number };
         children: Snippet;
     } = $props();
 </script>
 
-<div class="navbar-item" class:active bind:clientWidth={width}>
+<div class="navbar-item" class:active bind:clientWidth={dimensions.width} bind:clientHeight={dimensions.height}>
     <button onclick={() => onClick(index)}>
         {#if prefix}<span class="number">{prefix}</span>{/if}
         <span class="text">{@render children()}</span>

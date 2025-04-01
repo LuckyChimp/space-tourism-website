@@ -2,6 +2,7 @@
     import { goto } from '$app/navigation';
     import Logo from '$lib/components/Logo.svelte';
     import Navbar from '$lib/components/navigation/NavigationMenu.svelte';
+    import NavigationOpen from '$lib/components/navigation/NavigationOpen.svelte';
 
     // Props
     let { activeNavbarItemIndex, navbarSections }: { activeNavbarItemIndex: number; navbarSections: string[] } = $props();
@@ -14,17 +15,16 @@
     <Logo />
     <hr />
     <Navbar
-        sections={navbarSections}
         activeIndex={activeNavbarItemIndex}
-        usePrefixes
-        displayBackground
+        context="website"
+        sections={navbarSections}
         onItemClick={onNavbarItemClick}
-        itemGap={48}
         --itemGap="var(--600)"
         --height="var(--1200)"
         --padding="0 var(--800) 0 var(--3200)"
         --colorOfInactiveItems="var(--white)"
     />
+    <NavigationOpen />
 </header>
 
 <style>
@@ -40,10 +40,42 @@
         z-index: 1;
     }
 
+    @media screen and (max-width: 869px) {
+        header {
+            top: 0;
+            left: var(--500);
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        header {
+            left: var(--300);
+            right: var(--300);
+        }
+    }
+
     hr {
         width: 50%;
         position: absolute;
         left: calc(var(--600) + var(--800));
         z-index: 1;
+    }
+
+    @media screen and (max-width: 1600px) {
+        hr {
+            width: 40%;
+        }
+    }
+
+    @media screen and (max-width: 1350px) {
+        hr {
+            width: 30%;
+        }
+    }
+
+    @media screen and (max-width: 1150px) {
+        hr {
+            display: none;
+        }
     }
 </style>

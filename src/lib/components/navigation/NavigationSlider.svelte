@@ -1,5 +1,9 @@
 <script lang="ts">
-    let { activeIndex, itemWidths, itemGap }: { activeIndex: number; itemWidths: number[]; itemGap: number } = $props();
+    let {
+        activeIndex,
+        orientation,
+        itemDimensions,
+    }: { activeIndex: number; orientation: 'horizontal' | 'vertical'; itemDimensions: { width: number; height: number }[] } = $props();
 
     // Local variables
     let slider: HTMLDivElement;
@@ -12,14 +16,38 @@
     const updateSlider = () => {
         if (activeIndex === -1) return;
 
-        slider.style.width = `${itemWidths[activeIndex]}px`;
-        slider.style.transform = `translateX(${calcXOffsetOfSlider(activeIndex)}px)`;
+        if (orientation === 'horizontal') {
+            slider.style.height = '3px';
+            slider.style.width = `${itemDimensions[activeIndex].width}px`;
+            slider.style.transform = `translateX(${calcXOffsetOfSlider(activeIndex)}px)`;
+        } else if (orientation === 'vertical') {
+            slider.style.width = '3px';
+            slider.style.height = `${itemDimensions[activeIndex].height}px`;
+            slider.style.transform = `translateY(${calcYOffsetOfSlider(activeIndex)}px)`;
+        }
+    };
+
+    // Calculate gap between navigation items
+    const calcNavigationItemGap = () => {
+        const navigationItems = slider.parentElement?.getElementsByClassName('navigation-items')[0].children!;
+
+        if (orientation === 'horizontal') {
+            return navigationItems[1].getBoundingClientRect().left - navigationItems[0].getBoundingClientRect().right;
+        } else {
+            return navigationItems[1].getBoundingClientRect().top - navigationItems[0].getBoundingClientRect().bottom;
+        }
     };
 
     // Calculate the x offset of the slider
     const calcXOffsetOfSlider = (index: number) => {
-        const gap = itemGap; // Gap between nav items
-        return itemWidths.slice(0, index).reduce((offset, width) => offset + width, index * gap);
+        const gap = calcNavigationItemGap(); // Gap between nav items
+        return itemDimensions.slice(0, index).reduce((offset, dimensions) => offset + dimensions.width, index * gap);
+    };
+
+    // Calculate the y offset of the slider
+    const calcYOffsetOfSlider = (index: number) => {
+        const gap = calcNavigationItemGap(); // Gap between nav items
+        return itemDimensions.slice(0, index).reduce((offset, dimensions) => offset + dimensions.height, index * gap);
     };
 </script>
 
@@ -36,5 +64,13 @@
         bottom: 0;
         background-color: var(--white);
         transition: all 300ms ease-out;
+    }
+
+    @media screen and (max-width: 768px) {
+        :global(nav) .slider {
+            width: 3px;
+            top: calc(var(--1200) + var(--200));
+            right: 0;
+        }
     }
 </style>

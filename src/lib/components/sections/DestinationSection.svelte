@@ -30,10 +30,8 @@
                 <TabBar
                     sections={tabBarSections}
                     activeIndex={activeDestinationIndex}
-                    usePrefixes={false}
-                    displayBackground={false}
+                    context="carousel"
                     onItemClick={onTabBarItemClick}
-                    itemGap={32}
                     --itemGap="var(--400)"
                     --height="var(--400)"
                     --padding="0"

@@ -1,0 +1,1 @@
+export const navbar = $state({ isOpen: false });
