@@ -55,7 +55,7 @@
 
 <style>
     #destination {
-        height: 100vh;
+        min-height: 100vh;
         display: flex;
         flex-flow: column nowrap;
         padding-top: var(--section-padding-top);

@@ -35,7 +35,7 @@
 
 <style>
     #technology {
-        height: 100vh;
+        min-height: 100vh;
         display: flex;
         flex-direction: column;
         padding-top: var(--section-padding-top);
