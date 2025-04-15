@@ -3,11 +3,11 @@
         $props();
 </script>
 
-<div class="two-columns">
-    <div class="left-column">
+<div class="split-layout">
+    <div class="primary">
         <img src={image} alt="moon" />
     </div>
-    <div class="right-column">
+    <div class="secondary">
         <h2 class="destination-name">{name}</h2>
         <p class="destination-description">{description}</p>
         <hr />
@@ -25,21 +25,23 @@
 </div>
 
 <style>
-    .two-columns {
+    .split-layout {
         min-width: 100%;
         display: flex;
         align-items: center;
+        flex-wrap: wrap;
+        gap: var(--400);
         padding-left: var(--section-padding-left);
         padding-right: var(--section-padding-right);
     }
 
-    .left-column,
-    .right-column {
+    .primary,
+    .secondary {
         flex: 1;
     }
 
     .destination-name {
-        margin: var(--500) 0 var(--200) 0;
+        margin: calc(var(--400) + var(--500)) 0 var(--200) 0;
     }
 
     .destination-description,
@@ -52,8 +54,10 @@
     }
 
     .distance-travel-time-container {
+        width: 100%;
         display: flex;
         gap: var(--300);
+        flex-wrap: wrap;
     }
 
     .distance-travel-time-container > div {
@@ -62,5 +66,66 @@
 
     h6 {
         margin-top: var(--150);
+    }
+
+    @media screen and (max-width: 1276px) {
+        .split-layout {
+            flex-direction: column;
+            padding: 0 var(--1600);
+            gap: calc(var(--1000));
+        }
+
+        .primary,
+        .secondary {
+            flex: initial;
+        }
+
+        .secondary {
+            display: flex;
+            flex-flow: column;
+            align-items: center;
+            margin-top: calc(var(--400) + var(--300));
+        }
+
+        .destination-name {
+            margin-top: 0;
+        }
+
+        .destination-description {
+            text-align: center;
+        }
+
+        hr {
+            width: 100%;
+        }
+
+        .distance-travel-time-container {
+            justify-content: space-evenly;
+        }
+
+        .distance-travel-time-container > * {
+            flex: initial !important;
+            text-align: center;
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        .primary img {
+            width: 300px;
+            height: 300px;
+        }
+    }
+
+    @media screen and (max-width: 636px) {
+        .split-layout {
+            padding: 0 var(--800);
+        }
+    }
+
+    @media screen and (max-width: 425px) {
+        .primary img {
+            width: 150px;
+            height: 150px;
+        }
     }
 </style>

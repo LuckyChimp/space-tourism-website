@@ -51,7 +51,7 @@
     };
 </script>
 
-<div class="slider" bind:this={slider}></div>
+<div class="slider" class:vertical={orientation === 'vertical'} bind:this={slider}></div>
 
 <style>
     :global(nav:has(.navbar-item.active:hover)) .slider {
@@ -67,7 +67,7 @@
     }
 
     @media screen and (max-width: 768px) {
-        :global(nav) .slider {
+        :global(nav) .slider.vertical {
             width: 3px;
             top: calc(var(--1200) + var(--200));
             right: 0;

@@ -45,9 +45,12 @@
 <nav
     class:orientation-vertical={orientation === 'vertical' && context === 'website'}
     class:is-open={navbar.isOpen}
+    class:context-website={context === 'website'}
     class:display-background={context === 'website'}
 >
-    <NavigationClose />
+    {#if context === 'website'}
+        <NavigationClose />
+    {/if}
     <div class="navigation-items">
         {#each sections as section, index}
             <NavigationItem
@@ -61,7 +64,7 @@
             </NavigationItem>
         {/each}
     </div>
-    <NavigationSlider {activeIndex} {orientation} {itemDimensions} />
+    <NavigationSlider {activeIndex} orientation={context === 'carousel' ? 'horizontal' : orientation} {itemDimensions} />
 </nav>
 
 <style>
@@ -89,26 +92,26 @@
     }
 
     @media screen and (max-width: 1029px) {
-        nav {
+        nav.context-website {
             padding-left: var(--1600);
         }
     }
 
     @media screen and (max-width: 901px) {
-        nav {
+        nav.context-website {
             padding-left: var(--1200);
         }
     }
 
     @media screen and (max-width: 869px) {
-        nav {
+        nav.context-website {
             padding-left: var(--1200);
             padding-right: var(--500);
         }
     }
 
     @media screen and (max-width: 797px) {
-        nav {
+        nav.context-website {
             padding-left: var(--800);
             padding-right: var(--500);
         }
@@ -123,7 +126,7 @@
     }
 
     @media screen and (max-width: 768px) {
-        nav {
+        nav.context-website {
             position: fixed;
             top: 0;
             bottom: 0;
@@ -132,7 +135,7 @@
             padding: var(--400);
         }
 
-        .navigation-items {
+        nav.context-website .navigation-items {
             margin-top: var(--1000);
             flex-direction: column;
             align-items: initial;
