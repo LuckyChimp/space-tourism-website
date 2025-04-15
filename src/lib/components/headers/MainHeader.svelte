@@ -40,7 +40,7 @@
         z-index: 1;
     }
 
-    @media screen and (max-width: 869px) {
+    @media screen and (max-width: 900px) {
         header {
             top: 0;
             left: var(--500);

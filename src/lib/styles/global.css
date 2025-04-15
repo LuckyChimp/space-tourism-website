@@ -120,3 +120,52 @@ small {
     letter-spacing: 2px;
     text-transform: uppercase;
 }
+
+/*  TODO Reduce font size on mobile screen size for body, all headings and small elements */
+@media screen and (max-width: 768px) {
+    body {
+        font-size: var(--200);
+    }
+
+    h2 {
+        font-size: var(--1000);
+    }
+
+    h3 {
+        font-size: var(--500);
+    }
+
+    h4 {
+        font-size: var(--300);
+    }
+
+    h5 {
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    body {
+        font-size: 15px;
+    }
+
+    h1 {
+        font-size: var(--1000);
+    }
+
+    h2 {
+        font-size: 56px;
+    }
+
+    h3 {
+        font-size: var(--300);
+    }
+
+    h4 {
+        font-size: 18px;
+    }
+
+    h5 {
+        font-size: var(--200);
+    }
+}
