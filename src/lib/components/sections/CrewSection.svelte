@@ -29,7 +29,7 @@
         {/snippet}
         {#snippet navigation()}
             <div class="pagination-container">
-                <Pagination type="small" activeIndex={activeCrewIndex} length={crew.length} onItemClick={onPaginationItemClick} --padding-bottom="var(--600)" />
+                <Pagination type="small" activeIndex={activeCrewIndex} length={crew.length} onItemClick={onPaginationItemClick} />
             </div>
         {/snippet}
     </Carousel>
@@ -46,6 +46,12 @@
         background-position: 0 50%;
         background-size: cover;
         background-repeat: no-repeat;
+    }
+
+    @media screen and (max-width: 1497px) {
+        #crew {
+            gap: var(--800);
+        }
     }
 
     .pagination-container {

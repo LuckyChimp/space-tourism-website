@@ -26,8 +26,6 @@
     .pagination {
         display: flex;
         justify-content: center;
-
-        padding-bottom: var(--padding-bottom, 0);
     }
 
     .pagination.type-small {

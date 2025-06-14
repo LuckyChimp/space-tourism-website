@@ -20,6 +20,7 @@
         min-width: 100%;
         display: flex;
         justify-content: space-between;
+        flex-wrap: wrap;
         gap: var(--400);
         padding-left: var(--section-padding-left);
         padding-right: var(--section-padding-right);
@@ -29,6 +30,17 @@
         max-width: 600px;
         display: flex;
         flex-direction: column;
+    }
+
+    @media screen and (max-width: 1497px) {
+        .two-columns {
+            justify-content: center;
+        }
+
+        .left-column {
+            max-width: 580px;
+            text-align: center;
+        }
     }
 
     .crew-member-text-container {
@@ -53,7 +65,6 @@
 
     .right-column {
         position: relative;
-        width: 26%;
         display: flex;
         align-items: center;
         justify-content: center;
