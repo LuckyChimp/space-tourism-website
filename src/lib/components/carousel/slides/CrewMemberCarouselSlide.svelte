@@ -2,21 +2,21 @@
     let { role, name, bio, image }: { role: string; name: string; bio: string; image: string } = $props();
 </script>
 
-<div class="two-columns">
-    <div class="left-column">
+<div class="split-layout">
+    <div class="primary">
         <div class="crew-member-text-container">
             <h4 class="crew-member-role">{role}</h4>
             <h3 class="crew-member-name">{name}</h3>
             <p class="crew-member-bio">{bio}</p>
         </div>
     </div>
-    <div class="right-column">
+    <div class="secondary">
         <img src={image} alt={name} class="crew-member-image" />
     </div>
 </div>
 
 <style>
-    .two-columns {
+    .split-layout {
         min-width: 100%;
         display: flex;
         justify-content: space-between;
@@ -26,19 +26,30 @@
         padding-right: var(--section-padding-right);
     }
 
-    .left-column {
+    @media screen and (max-width: 886px) {
+        .split-layout {
+            padding: 0 var(--1000);
+        }
+    }
+
+    @media screen and (max-width: 600px) {
+        .split-layout {
+            padding: 0 var(--800);
+        }
+    }
+
+    .primary {
         max-width: 600px;
         display: flex;
         flex-direction: column;
     }
 
     @media screen and (max-width: 1497px) {
-        .two-columns {
+        .split-layout {
             justify-content: center;
         }
 
-        .left-column {
-            max-width: 580px;
+        .primary {
             text-align: center;
         }
     }
@@ -63,7 +74,7 @@
         color: var(--light-blue);
     }
 
-    .right-column {
+    .secondary {
         position: relative;
         display: flex;
         align-items: center;
@@ -71,7 +82,7 @@
     }
 
     /* For bottom image blur */
-    .right-column::after {
+    .secondary::after {
         content: '';
         position: absolute;
         height: var(--400);

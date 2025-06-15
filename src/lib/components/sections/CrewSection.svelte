@@ -48,17 +48,17 @@
         background-repeat: no-repeat;
     }
 
-    @media screen and (max-width: 1497px) {
-        #crew {
-            gap: var(--800);
-        }
-    }
-
     .pagination-container {
         position: absolute;
         bottom: 0;
         left: 0;
         padding-left: var(--section-padding-left);
         padding-right: var(--section-padding-right);
+    }
+
+    @media screen and (max-width: 1497px) {
+        #crew {
+            gap: var(--800);
+        }
     }
 </style>
