@@ -10,6 +10,7 @@
 
     // States
     let activeCrewIndex = $state(0);
+    let crewMemberTextContainerOffsetHeights: number[] = $state(Array(crew.length));
 
     // Event listeners
     const onPaginationItemClick = (index: number) => {
@@ -23,12 +24,23 @@
     <SectionHeader sectionNumber="02" heading="Meet your crew" />
     <Carousel orientation="landscape" activeIndex={activeCrewIndex}>
         {#snippet slides()}
-            {#each crew as crewMember}
-                <CrewMemberCarouselSlide role={crewMember.role} name={crewMember.name} bio={crewMember.bio} image={crewMember.images.png} />
+            {#each crew as crewMember, index}
+                <CrewMemberCarouselSlide
+                    role={crewMember.role}
+                    name={crewMember.name}
+                    bio={crewMember.bio}
+                    image={crewMember.images.png}
+                    isActive={index === activeCrewIndex}
+                    bind:textContainerOffsetHeight={crewMemberTextContainerOffsetHeights[index]}
+                />
             {/each}
         {/snippet}
         {#snippet navigation()}
-            <div class="pagination-container">
+            <!-- WATCH OUT: back added value of top property must always match half of the flex gap in the split layout so that pagination container can be vertically centered -->
+            <div
+                class="pagination-container"
+                style={`top: ${crewMemberTextContainerOffsetHeights[activeCrewIndex] + 64}px; left: 50%; transform: translate(-50%, -50%);`}
+            >
                 <Pagination type="small" activeIndex={activeCrewIndex} length={crew.length} onItemClick={onPaginationItemClick} />
             </div>
         {/snippet}
@@ -50,15 +62,92 @@
 
     .pagination-container {
         position: absolute;
-        bottom: 0;
-        left: 0;
         padding-left: var(--section-padding-left);
         padding-right: var(--section-padding-right);
+        z-index: 1;
+        transition: all 300ms ease-out;
     }
 
-    @media screen and (max-width: 1497px) {
+    @media screen and (max-width: 768px) {
         #crew {
+            gap: var(--600);
+            padding-top: calc(var(--300) + var(--600) + var(--300) + var(--300));
+            padding-bottom: var(--300);
+        }
+    }
+
+    @media screen and (max-width: 425px) {
+        #crew {
+            background-image: url('images/crew/background-crew-mobile.jpg');
+        }
+    }
+
+    /* Slide specific styles */
+    /* -- 1st slide */
+    @media screen and (max-width: 1497px) {
+        #crew:global(:has(.split-layout:nth-child(1).active)) {
             gap: var(--800);
+            background-image: url('images/crew/background-crew-tablet.jpg');
+        }
+    }
+
+    @media screen and (min-width: 1498px) {
+        :global(#crew:has(.split-layout:nth-child(1).active) .pagination-container) {
+            bottom: 0;
+            left: 0 !important;
+            top: initial !important;
+            transform: initial !important;
+        }
+    }
+
+    /* -- 2nd slide */
+    @media screen and (max-width: 1416px) {
+        #crew:global(:has(.split-layout:nth-child(2).active)) {
+            gap: var(--800);
+            background-image: url('images/crew/background-crew-tablet.jpg');
+        }
+    }
+
+    @media screen and (min-width: 1417px) {
+        :global(#crew:has(.split-layout:nth-child(2).active) .pagination-container) {
+            bottom: 0;
+            left: 0 !important;
+            top: initial !important;
+            transform: initial !important;
+        }
+    }
+
+    /* -- 3rd slide */
+    @media screen and (max-width: 1532px) {
+        #crew:global(:has(.split-layout:nth-child(3).active)) {
+            gap: var(--800);
+            background-image: url('images/crew/background-crew-tablet.jpg');
+        }
+    }
+
+    @media screen and (min-width: 1533px) {
+        :global(#crew:has(.split-layout:nth-child(3).active) .pagination-container) {
+            bottom: 0;
+            left: 0 !important;
+            top: initial !important;
+            transform: initial !important;
+        }
+    }
+
+    /* -- 4th slide */
+    @media screen and (max-width: 1558px) {
+        #crew:global(:has(.split-layout:nth-child(4).active)) {
+            gap: var(--800);
+            background-image: url('images/crew/background-crew-tablet.jpg');
+        }
+    }
+
+    @media screen and (min-width: 1559px) {
+        :global(#crew:has(.split-layout:nth-child(4).active) .pagination-container) {
+            bottom: 0;
+            left: 0 !important;
+            top: initial !important;
+            transform: initial !important;
         }
     }
 </style>

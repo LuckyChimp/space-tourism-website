@@ -69,4 +69,17 @@
     .pagination-item.active {
         background-color: var(--white);
     }
+
+    @media screen and (max-width: 768px) {
+        .pagination.type-small {
+            gap: var(--200);
+        }
+
+        .pagination-item.type-small {
+            width: var(--150);
+            height: var(--150);
+        }
+
+        /* TODO Adjust large pagination type and its items here as well */
+    }
 </style>
