@@ -2,13 +2,26 @@
     // Props
     let {
         type,
+        orientation,
         activeIndex,
         length,
         onItemClick,
-    }: { type: 'small' | 'largeWithNumbers'; activeIndex: number; length: number; onItemClick: (index: number) => void } = $props();
+    }: {
+        type: 'small' | 'largeWithNumbers';
+        orientation: 'landscape' | 'portrait';
+        activeIndex: number;
+        length: number;
+        onItemClick: (index: number) => void;
+    } = $props();
 </script>
 
-<div class="pagination" class:type-small={type === 'small'} class:type-large-with-numbers={type === 'largeWithNumbers'}>
+<div
+    class="pagination"
+    class:type-small={type === 'small'}
+    class:type-large-with-numbers={type === 'largeWithNumbers'}
+    class:orientation-landscape={orientation === 'landscape'}
+    class:orientation-portrait={orientation === 'portrait'}
+>
     {#each { length }, index}
         <button
             onclick={() => onItemClick(index)}
@@ -26,16 +39,23 @@
     .pagination {
         display: flex;
         justify-content: center;
+        z-index: 1;
     }
 
     .pagination.type-small {
-        flex-direction: row;
         gap: var(--500);
     }
 
     .pagination.type-large-with-numbers {
-        flex-direction: column;
         gap: var(--400);
+    }
+
+    .pagination.orientation-landscape {
+        flex-direction: row;
+    }
+
+    .pagination.orientation-portrait {
+        flex-direction: column;
     }
 
     .pagination-item {

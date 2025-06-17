@@ -37,7 +37,7 @@
         flex-direction: row;
         align-items: center;
         justify-content: space-between;
-        z-index: 1;
+        z-index: 2;
     }
 
     @media screen and (max-width: 900px) {
@@ -58,7 +58,6 @@
         width: 50%;
         position: absolute;
         left: calc(var(--600) + var(--800));
-        z-index: 1;
     }
 
     @media screen and (max-width: 1600px) {

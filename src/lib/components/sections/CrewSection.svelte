@@ -41,7 +41,7 @@
                 class="pagination-container"
                 style={`top: ${crewMemberTextContainerOffsetHeights[activeCrewIndex] + 64}px; left: 50%; transform: translate(-50%, -50%);`}
             >
-                <Pagination type="small" activeIndex={activeCrewIndex} length={crew.length} onItemClick={onPaginationItemClick} />
+                <Pagination type="small" orientation="landscape" activeIndex={activeCrewIndex} length={crew.length} onItemClick={onPaginationItemClick} />
             </div>
         {/snippet}
     </Carousel>
@@ -64,7 +64,6 @@
         position: absolute;
         padding-left: var(--section-padding-left);
         padding-right: var(--section-padding-right);
-        z-index: 1;
         transition: all 300ms ease-out;
     }
 

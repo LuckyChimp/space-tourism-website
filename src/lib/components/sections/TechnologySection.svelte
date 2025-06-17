@@ -23,7 +23,13 @@
     <SectionHeader sectionNumber="03" heading="Space launch 101" --padding-left="0" />
     <Carousel orientation="portrait" activeIndex={activeTechnologyIndex}>
         {#snippet navigation()}
-            <Pagination type="largeWithNumbers" activeIndex={activeTechnologyIndex} length={technology.length} onItemClick={onPaginationItemClick} />
+            <Pagination
+                type="largeWithNumbers"
+                orientation={contentOrientation}
+                activeIndex={activeTechnologyIndex}
+                length={technology.length}
+                onItemClick={onPaginationItemClick}
+            />
         {/snippet}
         {#snippet slides()}
             {#each technology as technology}
