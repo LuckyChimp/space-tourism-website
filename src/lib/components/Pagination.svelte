@@ -100,6 +100,24 @@
             height: var(--150);
         }
 
-        /* TODO Adjust large pagination type and its items here as well */
+        .pagination.type-large-with-numbers {
+            gap: var(--200);
+        }
+
+        .pagination-item.type-large-with-numbers {
+            width: var(--800);
+            height: var(--800);
+        }
+    }
+
+    @media screen and (max-width: 425px) {
+        .pagination.type-large-with-numbers {
+            gap: var(--200);
+        }
+
+        .pagination-item.type-large-with-numbers {
+            width: var(--500);
+            height: var(--500);
+        }
     }
 </style>

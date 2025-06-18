@@ -5,8 +5,13 @@
     let carouselSlidesElement: HTMLDivElement;
 
     // Props
-    let { orientation, navigation, slides, activeIndex }: { orientation: 'landscape' | 'portrait'; navigation: Snippet; slides: Snippet; activeIndex: number } =
-        $props();
+    let {
+        orientation,
+        navigation,
+        slides,
+        activeIndex,
+        showEdgeFade = true,
+    }: { orientation: 'landscape' | 'portrait'; navigation: Snippet; slides: Snippet; activeIndex: number; showEdgeFade?: boolean } = $props();
 
     $effect(() => {
         // Scroll the carousel depending on the active index
@@ -26,6 +31,7 @@
         class="carousel-slides"
         class:orientation-landscape={orientation === 'landscape'}
         class:orientation-portrait={orientation === 'portrait'}
+        class:show-edge-fade={showEdgeFade}
         bind:this={carouselSlidesElement}
     >
         {@render slides()}
@@ -42,13 +48,12 @@
 
     .carousel.orientation-landscape {
         flex-direction: column;
-        mask: linear-gradient(to left, transparent 0%, var(--white) 15% 85%, transparent 100%);
     }
 
     .carousel.orientation-portrait {
+        height: 60vh;
         flex-direction: row;
         gap: var(--800);
-        mask: linear-gradient(to bottom, transparent 0%, var(--white) 15% 85%, transparent 100%);
     }
 
     .carousel-slides {
@@ -65,5 +70,13 @@
     .carousel-slides.orientation-portrait {
         width: 100%;
         flex-direction: column;
+    }
+
+    .carousel-slides.show-edge-fade.orientation-landscape {
+        mask: linear-gradient(to left, transparent 0%, var(--white) 15% 85%, transparent 100%);
+    }
+
+    .carousel-slides.show-edge-fade.orientation-portrait {
+        mask: linear-gradient(to bottom, transparent 0%, var(--white) 15% 85%, transparent 100%);
     }
 </style>
