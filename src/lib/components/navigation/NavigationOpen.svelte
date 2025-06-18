@@ -6,7 +6,7 @@
 </script>
 
 <button onclick={onButtonClick}>
-    <img src="/icons/icon-hamburger.svg" alt="Menü öffnen" />
+    <img src="icons/icon-hamburger.svg" alt="Menü öffnen" />
 </button>
 
 <style>

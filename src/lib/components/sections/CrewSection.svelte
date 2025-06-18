@@ -54,7 +54,7 @@
         flex-direction: column;
         padding-top: var(--section-padding-top);
         padding-bottom: var(--section-padding-bottom);
-        background-image: url('images/crew/background-crew-desktop.jpg');
+        background-image: url('/images/crew/background-crew-desktop.jpg');
         background-position: 0 50%;
         background-size: cover;
         background-repeat: no-repeat;
@@ -78,7 +78,7 @@
 
     @media screen and (max-width: 425px) {
         #crew {
-            background-image: url('images/crew/background-crew-mobile.jpg');
+            background-image: url('/images/crew/background-crew-mobile.jpg');
         }
     }
 
@@ -87,7 +87,7 @@
     @media screen and (max-width: 1497px) {
         #crew:global(:has(.split-layout:nth-child(1).active)) {
             gap: var(--800);
-            background-image: url('images/crew/background-crew-tablet.jpg');
+            background-image: url('/images/crew/background-crew-tablet.jpg');
         }
     }
 
@@ -104,7 +104,7 @@
     @media screen and (max-width: 1416px) {
         #crew:global(:has(.split-layout:nth-child(2).active)) {
             gap: var(--800);
-            background-image: url('images/crew/background-crew-tablet.jpg');
+            background-image: url('/images/crew/background-crew-tablet.jpg');
         }
     }
 
@@ -121,7 +121,7 @@
     @media screen and (max-width: 1532px) {
         #crew:global(:has(.split-layout:nth-child(3).active)) {
             gap: var(--800);
-            background-image: url('images/crew/background-crew-tablet.jpg');
+            background-image: url('/images/crew/background-crew-tablet.jpg');
         }
     }
 
@@ -138,7 +138,7 @@
     @media screen and (max-width: 1558px) {
         #crew:global(:has(.split-layout:nth-child(4).active)) {
             gap: var(--800);
-            background-image: url('images/crew/background-crew-tablet.jpg');
+            background-image: url('/images/crew/background-crew-tablet.jpg');
         }
     }
 

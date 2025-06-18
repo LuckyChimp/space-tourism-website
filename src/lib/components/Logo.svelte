@@ -1,4 +1,4 @@
-<img src="/images/logo.svg" alt="Logo" width="48" height="48" />
+<img src="images/logo.svg" alt="Logo" width="48" height="48" />
 
 <style>
     @media screen and (max-width: 768px) {

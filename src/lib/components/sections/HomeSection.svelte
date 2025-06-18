@@ -21,7 +21,7 @@
         min-height: 100vh;
         display: flex;
         flex-direction: column-reverse;
-        background-image: url('images/home/background-home-desktop.jpg');
+        background-image: url('/images/home/background-home-desktop.jpg');
         background-size: cover;
         background-repeat: no-repeat;
         padding: calc(var(--500) + var(--1200) + var(--1600)) calc(var(--800) + var(--600) + var(--800)) var(--1600) calc(var(--800) + var(--600) + var(--800));
@@ -29,7 +29,7 @@
 
     @media screen and (max-width: 1227px) {
         #home {
-            background-image: url('images/home/background-home-tablet.jpg');
+            background-image: url('/images/home/background-home-tablet.jpg');
             background-position: 50% 60%;
         }
     }
@@ -55,7 +55,7 @@
 
     @media screen and (max-width: 425px) {
         #home {
-            background-image: url('images/home/background-home-mobile.jpg');
+            background-image: url('/images/home/background-home-mobile.jpg');
             background-position-x: 50%;
         }
     }

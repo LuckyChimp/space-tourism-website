@@ -81,7 +81,7 @@
         padding-top: var(--section-padding-top);
         padding-bottom: var(--section-padding-bottom);
         padding-left: var(--section-padding-left);
-        background-image: url('images/technology/background-technology-desktop.jpg');
+        background-image: url('/images/technology/background-technology-desktop.jpg');
         background-size: cover;
         background-repeat: no-repeat;
     }
@@ -95,7 +95,7 @@
         #technology {
             padding-left: 0;
             gap: var(--800);
-            background-image: url('images/technology/background-technology-tablet.jpg');
+            background-image: url('/images/technology/background-technology-tablet.jpg');
         }
 
         .pagination-container {
@@ -115,7 +115,7 @@
 
     @media screen and (max-width: 425px) {
         #technology {
-            background-image: url('images/technology/background-technology-mobile.jpg');
+            background-image: url('/images/technology/background-technology-mobile.jpg');
         }
     }
 </style>

@@ -62,7 +62,7 @@
         gap: var(--300);
         padding-top: var(--section-padding-top);
         padding-bottom: var(--section-padding-bottom);
-        background-image: url('images/destination/background-destination-desktop.jpg');
+        background-image: url('/images/destination/background-destination-desktop.jpg');
         background-size: cover;
         background-repeat: no-repeat;
     }
@@ -76,7 +76,7 @@
     @media screen and (max-width: 1276px) {
         #destination {
             gap: var(--800);
-            background-image: url('images/destination/background-destination-tablet.jpg');
+            background-image: url('/images/destination/background-destination-tablet.jpg');
         }
 
         .tab-bar-container {
@@ -107,7 +107,7 @@
 
     @media screen and (max-width: 425px) {
         #destination {
-            background-image: url('images/destination/background-destination-mobile.jpg');
+            background-image: url('/images/destination/background-destination-mobile.jpg');
         }
 
         .tab-bar-container {
