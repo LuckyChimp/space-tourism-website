@@ -65,6 +65,7 @@
         padding-left: var(--section-padding-left);
         padding-right: var(--section-padding-right);
         transition: all 300ms ease-out;
+        z-index: 1;
     }
 
     @media screen and (max-width: 768px) {

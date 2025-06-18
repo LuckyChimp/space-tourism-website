@@ -72,7 +72,6 @@
         height: var(--height, var(--1200));
         position: relative;
         padding: var(--padding, 0 var(--800) 0 var(--3200));
-        z-index: 1;
     }
 
     nav.orientation-vertical {

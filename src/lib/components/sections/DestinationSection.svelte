@@ -70,6 +70,7 @@
     .tab-bar-container {
         position: absolute;
         left: calc(50% + var(--300));
+        z-index: 1;
     }
 
     @media screen and (max-width: 1276px) {

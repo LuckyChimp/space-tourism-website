@@ -91,7 +91,7 @@
     .crew-member-image {
         max-width: 100%;
         object-fit: contain;
-        mask-image: linear-gradient(to bottom, #0b0e17 80%, transparent 100%);
+        mask: linear-gradient(to bottom, #0b0e17 80%, transparent 100%);
     }
 
     /* Slide specific styles */

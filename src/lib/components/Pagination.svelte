@@ -39,7 +39,6 @@
     .pagination {
         display: flex;
         justify-content: center;
-        z-index: 1;
     }
 
     .pagination.type-small {
